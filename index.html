@@ -532,6 +532,7 @@ button,
 <button id="btn-home-crif" style="font-size:1.5em; padding:20px;" onclick="enterCompany('crif')">CRIF ITALIA</button>
 <button id="btn-home-var" style="font-size:1.5em; padding:20px;" onclick="enterCompany('var')">PALAZZO DI VARIGNANA</button>
 </div>
+<div id="lastUpdate" style="margin-top:40px;font-size:12px;color:#a9b8ca;letter-spacing:1px;text-align:center;"></div>
 </div>
 <div id="dashboardContainer" style="display:none;">
 <h1>Energy analysis</h1>
@@ -1172,6 +1173,20 @@ function goHome() {
   if(navComp) navComp.style.display = '';
   if(typeof hideTotal === 'function') hideTotal();
 }
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const today = new Date();
+  const formatted =
+    String(today.getDate()).padStart(2,'0') + '/' +
+    String(today.getMonth()+1).padStart(2,'0') + '/' +
+    today.getFullYear();
+
+  const el = document.getElementById('lastUpdate');
+  if(el) el.innerText = "Ultimo aggiornamento: " + formatted;
+});
 </script>
 
 </body>
