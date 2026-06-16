@@ -525,6 +525,25 @@ button,
 }
 </style>
 
+
+<style>
+/* Last update fixed date block positioned at the bottom of the homepage */
+#homeContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#lastUpdate {
+  margin-top: auto !important;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #a9b8ca;
+  letter-spacing: 1px;
+}
+</style>
+
 </head>
 <body><div id="homeContainer">
 <h1>Energy analysis</h1>
@@ -1178,14 +1197,8 @@ function goHome() {
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const today = new Date();
-  const formatted =
-    String(today.getDate()).padStart(2,'0') + '/' +
-    String(today.getMonth()+1).padStart(2,'0') + '/' +
-    today.getFullYear();
-
   const el = document.getElementById('lastUpdate');
-  if(el) el.innerText = "Ultimo aggiornamento: " + formatted;
+  if (el) el.innerText = 'Ultimo aggiornamento: 16/06/2026';
 });
 </script>
 
